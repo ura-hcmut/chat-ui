@@ -105,7 +105,7 @@ export async function endpointOai(
 		return async ({ messages, preprompt, generateSettings }) => {
 			let messagesOpenAI: OpenAI.Chat.Completions.ChatCompletionMessageParam[] =
 				await prepareMessages(messages, imageProcessor);
-
+			
 			if (messagesOpenAI?.[0]?.role !== "system") {
 				messagesOpenAI = [{ role: "system", content: "" }, ...messagesOpenAI];
 			}
@@ -141,15 +141,17 @@ async function prepareMessages(
 	messages: EndpointMessage[],
 	imageProcessor: ReturnType<typeof makeImageProcessor>
 ): Promise<OpenAI.Chat.Completions.ChatCompletionMessageParam[]> {
+	
 	return Promise.all(
 		messages.map(async (message) => {
 			if (message.from === "user") {
+				
 				return {
 					role: message.from,
-					content: [
+					content: message.files?.length ? [
 						...(await prepareFiles(imageProcessor, message.files ?? [])),
 						{ type: "text", text: message.content },
-					],
+					] :  message.content ,
 				};
 			}
 			return {

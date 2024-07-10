@@ -34,31 +34,59 @@ export async function generateTitle(prompt: string) {
 		{
 			from: "system",
 			content:
-				"You are a summarization AI. You'll never answer a user's question directly, but instead summarize the user's request into a single short sentence of four words or less. Always start your answer with an emoji relevant to the summary",
+				"Bạn là một AI tóm tắt. Bạn sẽ không bao giờ trả lời trực tiếp câu hỏi của người dùng, mà hãy tóm tắt yêu cầu của người dùng thành một câu ngắn gọn trong vòng bốn từ. Luôn bắt đầu câu trả lời của bạn bằng một biểu tượng cảm xúc phù hợp với phần tóm tắt",
 		},
-		{ from: "user", content: "Who is the president of Gabon?" },
-		{ from: "assistant", content: "🇬🇦 President of Gabon" },
-		{ from: "user", content: "Who is Julien Chaumond?" },
-		{ from: "assistant", content: "🧑 Julien Chaumond" },
-		{ from: "user", content: "what is 1 + 1?" },
-		{ from: "assistant", content: "🔢 Simple math operation" },
-		{ from: "user", content: "What are the latest news?" },
-		{ from: "assistant", content: "📰 Latest news" },
-		{ from: "user", content: "How to make a great cheesecake?" },
-		{ from: "assistant", content: "🍰 Cheesecake recipe" },
-		{ from: "user", content: "what is your favorite movie? do a short answer." },
-		{ from: "assistant", content: "🎥 Favorite movie" },
-		{ from: "user", content: "Explain the concept of artificial intelligence in one sentence" },
-		{ from: "assistant", content: "🤖 AI definition" },
-		{ from: "user", content: "Draw a cute cat" },
-		{ from: "assistant", content: "🐱 Cute cat drawing" },
+		{
+			"from": "assistant",
+			"content": "🔢 Phép tính đơn giản"
+		  },
+		  {
+			"from": "user",
+			"content": "Tin tức mới nhất là gì?"
+		  },
+		  {
+			"from": "assistant",
+			"content": "📰 Tin tức mới nhất"
+		  },
+		  {
+			"from": "user",
+			"content": "Làm bánh pho mát ngon như thế nào?"
+		  },
+		  {
+			"from": "assistant",
+			"content": "🍰 Công thức bánh pho mát"
+		  },
+		  {
+			"from": "user",
+			"content": "Bộ phim yêu thích của bạn là gì? hãy trả lời ngắn gọn."
+		  },
+		  {
+			"from": "assistant",
+			"content": "🎥 Phim yêu thích"
+		  },
+		  {
+			"from": "user",
+			"content": "Giải thích khái niệm trí tuệ nhân tạo trong một câu"
+		  },
+		  {
+			"from": "assistant",
+			"content": "🤖 Định nghĩa AI"
+		  },
+		  {
+			"from": "user",
+			"content": "Vẽ một con mèo dễ thương"
+		  },
+		  {
+			"from": "assistant",
+			"content": "🐱 Vẽ mèo dễ thương"
+		  },
 		{ from: "user", content: prompt },
 	];
 
 	return await generateFromDefaultEndpoint({
 		messages,
 		preprompt:
-			"You are a summarization AI. Summarize the user's request into a single short sentence of four words or less. Do not try to answer it, only summarize the user's query. Always start your answer with an emoji relevant to the summary",
+			"Bạn là một AI tóm tắt. Bạn sẽ không bao giờ trả lời trực tiếp câu hỏi của người dùng, mà hãy tóm tắt yêu cầu của người dùng thành một câu ngắn gọn trong vòng bốn từ. Luôn bắt đầu câu trả lời của bạn bằng một biểu tượng cảm xúc phù hợp với phần tóm tắt",
 		generateSettings: {
 			max_new_tokens: 15,
 		},
