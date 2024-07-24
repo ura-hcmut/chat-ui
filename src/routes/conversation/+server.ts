@@ -102,7 +102,7 @@ export const POST: RequestHandler = async ({ locals, request }) => {
 
 	const res = await collections.conversations.insertOne({
 		_id: new ObjectId(),
-		title: title || "New Chat",
+		title: title || "Cuộc trò chuyện mới",
 		rootMessageId,
 		messages,
 		model: values.model,

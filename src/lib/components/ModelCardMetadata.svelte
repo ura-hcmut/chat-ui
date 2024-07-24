@@ -21,8 +21,8 @@
 		rel="noreferrer"
 		class="flex items-center hover:underline"
 		><CarbonArrowUpRight class="mr-1.5 shrink-0 text-xs text-gray-400" />
-		Model
-		<div class="max-sm:hidden">&nbsp;page</div></a
+		Xem mô hình gốc tại
+		<div class="max-sm:hidden">&nbsp;đây</div></a
 	>
 	{#if model.datasetName || model.datasetUrl}
 		<a
@@ -31,8 +31,8 @@
 			rel="noreferrer"
 			class="flex items-center hover:underline"
 			><CarbonArrowUpRight class="mr-1.5 shrink-0 text-xs text-gray-400" />
-			Dataset
-			<div class="max-sm:hidden">&nbsp;page</div></a
+			Xem bộ dữ liệu tại
+			<div class="max-sm:hidden">&nbsp;đây</div></a
 		>
 	{/if}
 	{#if model.websiteUrl}
@@ -47,7 +47,7 @@
 				Built with Meta Llama 3
 			{:else}
 				<CarbonEarth class="mr-1.5 shrink-0 text-xs text-gray-400" />
-				Website
+				Web trường
 			{/if}
 		</a>
 	{/if}

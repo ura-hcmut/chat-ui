@@ -88,7 +88,7 @@ function convertMessageUpdate(message: Message, update: OldMessageUpdate): Messa
 			if (update.status === "title") {
 				return {
 					type: MessageUpdateType.Title,
-					title: update.message ?? "New Chat",
+					title: update.message ?? "Cuộc trò chuyện mới",
 				};
 			}
 			if (update.status === "pending") return null;

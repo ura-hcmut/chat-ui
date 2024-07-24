@@ -46,7 +46,7 @@
 					{#if $page.data.loginEnabled}
 						Try as guest
 					{:else}
-						Start chatting
+						Bắt đầu ngay
 					{/if}
 				</button>
 			{/if}

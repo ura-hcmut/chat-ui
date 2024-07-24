@@ -14,7 +14,7 @@
 	on:click={() => (isOpen = !isOpen)}
 	on:keydown={(e) => e.key === "Enter" && (isOpen = !isOpen)}
 >
-	<CarbonBlockchain class="text-xxs" /> Using Custom System Prompt
+	<CarbonBlockchain class="text-xxs" /> Đang dùng lệnh hướng dẫn hệ thống
 </button>
 
 {#if isOpen}

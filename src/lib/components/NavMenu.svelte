@@ -37,10 +37,10 @@
 	};
 
 	const titles: { [key: string]: string } = {
-		today: "Today",
-		week: "This week",
-		month: "This month",
-		older: "Older",
+		today: "Hôm nay",
+		week: "Tuần này",
+		month: "Tháng này",
+		older: "Cũ hơn",
 	} as const;
 
 	const nModels: number = $page.data.models.filter((el: Model) => !el.unlisted).length;
@@ -59,7 +59,7 @@
 		on:click={handleNewChatClick}
 		class="flex rounded-lg border bg-white px-2 py-0.5 text-center shadow-sm hover:shadow-none dark:border-gray-600 dark:bg-gray-700"
 	>
-		New Chat
+		Cuộc trò chuyện mới
 	</a>
 </div>
 <div
@@ -114,14 +114,14 @@
 		type="button"
 		class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
 	>
-		Theme
+		Giao diện
 	</button>
 	{#if nModels > 1}
 		<a
 			href="{base}/models"
 			class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
 		>
-			Models
+			Mô hình
 			<span
 				class="ml-auto rounded-full border border-gray-300 px-2 py-0.5 text-xs text-gray-500 dark:border-gray-500 dark:text-gray-400"
 				>{nModels}</span
@@ -145,7 +145,7 @@
 		href="{base}/settings"
 		class="flex h-9 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
 	>
-		Settings
+		Cài đặt
 	</a>
 	{#if envPublic.PUBLIC_APP_NAME === "HuggingChat"}
 		<a

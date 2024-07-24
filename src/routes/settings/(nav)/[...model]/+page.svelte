@@ -31,7 +31,7 @@
 <div class="flex flex-col items-start">
 	<div class="mb-5 flex flex-col gap-1.5">
 		<h2 class="text-lg font-semibold md:text-xl">
-			{$page.params.model}
+			HCMUT Chatbot - GemSUra 7B
 		</h2>
 
 		{#if model.description}
@@ -50,7 +50,7 @@
 				class="flex items-center truncate underline underline-offset-2"
 			>
 				<CarbonArrowUpRight class="mr-1.5 shrink-0 text-xs " />
-				Model page
+				Xem mô hình gốc tại đây
 			</a>
 		{/if}
 
@@ -62,7 +62,7 @@
 				class="flex items-center truncate underline underline-offset-2"
 			>
 				<CarbonArrowUpRight class="mr-1.5 shrink-0 text-xs " />
-				Dataset page
+				Xem bộ dữ liệu tại đây
 			</a>
 		{/if}
 
@@ -74,15 +74,15 @@
 				rel="noreferrer"
 			>
 				<CarbonArrowUpRight class="mr-1.5 shrink-0 text-xs " />
-				Model website
+				Web trường
 			</a>
 		{/if}
 		<CopyToClipBoardBtn
-			value="{envPublic.PUBLIC_ORIGIN || $page.url.origin}{base}/models/{model.id}"
+			value="https://www.ura.hcmut.edu.vn/bk-tvts/"
 			classNames="!border-none !shadow-none !py-0 !px-1 !rounded-md"
 		>
 			<div class="flex items-center gap-1.5 hover:underline">
-				<CarbonLink />Copy direct link to model
+				<CarbonLink />Sao chép đường dẫn trực tiếp đến HCMUT Chatbot
 			</div>
 		</CopyToClipBoardBtn>
 	</div>
@@ -92,24 +92,24 @@
 			? 'bg-gray-100'
 			: 'bg-black text-white'} my-8 flex items-center rounded-full px-3 py-1"
 		disabled={isActive}
-		name="Activate model"
+		name="Kích hoạt mô hình"
 		on:click|stopPropagation={() => {
 			$settings.activeModel = $page.params.model;
 		}}
 	>
-		{isActive ? "Active model" : "Activate"}
+		{isActive ? "Mô hình đang được kích hoạt" : "Kích hoạt"}
 	</button>
 
 	<div class="relative flex w-full flex-col gap-2">
 		<div class="flex w-full flex-row content-between">
-			<h3 class="mb-1.5 text-lg font-semibold text-gray-800">System Prompt</h3>
+			<h3 class="mb-1.5 text-lg font-semibold text-gray-800">Hướng dẫn hệ thống</h3>
 			{#if hasCustomPreprompt}
 				<button
 					class="ml-auto underline decoration-gray-300 hover:decoration-gray-700"
 					on:click|stopPropagation={() =>
 						($settings.customPrompts[$page.params.model] = model.preprompt)}
 				>
-					Reset
+					Đặt lại
 				</button>
 			{/if}
 		</div>
