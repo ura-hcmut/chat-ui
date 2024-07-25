@@ -11,10 +11,10 @@ export async function* generateTitleForConversation(
 	try {
 		const userMessage = conv.messages.find((m) => m.from === "user");
 		// HACK: detect if the conversation is new
-		if (conv.title !== "New Chat" || !userMessage) return;
+		if (conv.title !== "Cuộc trò chuyện mới" || !userMessage) return;
 
 		const prompt = userMessage.content;
-		const title = (await generateTitle(prompt)) ?? "New Chat";
+		const title = (await generateTitle(prompt)) ?? "Cuộc trò chuyện mới";
 
 		yield {
 			type: MessageUpdateType.Title,

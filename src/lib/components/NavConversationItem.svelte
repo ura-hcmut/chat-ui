@@ -25,14 +25,14 @@
 		confirmDelete = false;
 	}}
 	href="{base}/conversation/{conv.id}"
-	class="group flex h-10 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 {conv.id ===
+	class="group flex h-10 flex-none items-center gap-1.5 rounded-lg pl-2.5 pr-2 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 text-sm {conv.id ===
 	$page.params.id
 		? 'bg-gray-100 dark:bg-gray-700'
 		: ''}"
 >
 	<div class="flex flex-1 items-center truncate">
 		{#if confirmDelete}
-			<span class="mr-1 font-semibold"> Delete </span>
+			<span class="mr-1 font-semibold"> Xóa </span>
 		{/if}
 		{#if conv.avatarHash}
 			<img
@@ -55,7 +55,7 @@
 		<button
 			type="button"
 			class="flex h-5 w-5 items-center justify-center rounded md:hidden md:group-hover:flex"
-			title="Confirm delete action"
+			title="Xác nhận xóa"
 			on:click|preventDefault={() => {
 				confirmDelete = false;
 				dispatch("deleteConversation", conv.id);
@@ -75,9 +75,9 @@
 		<button
 			type="button"
 			class="flex h-5 w-5 items-center justify-center rounded md:hidden md:group-hover:flex"
-			title="Edit conversation title"
+			title="Thay đổi tiêu đề cuộc trò chuyện"
 			on:click|preventDefault={() => {
-				const newTitle = prompt("Edit this conversation title:", conv.title);
+				const newTitle = prompt("Thay đổi tiêu đề cuộc trò chuyện:", conv.title);
 				if (!newTitle) return;
 				dispatch("editConversationTitle", { id: conv.id, title: newTitle });
 			}}
@@ -88,7 +88,7 @@
 		<button
 			type="button"
 			class="flex h-5 w-5 items-center justify-center rounded md:hidden md:group-hover:flex"
-			title="Delete conversation"
+			title="Xóa cuộc trò chuyện"
 			on:click|preventDefault={(event) => {
 				if (event.shiftKey) {
 					dispatch("deleteConversation", conv.id);

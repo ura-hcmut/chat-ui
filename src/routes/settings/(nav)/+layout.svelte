@@ -35,7 +35,7 @@
 	class="grid h-full w-full grid-cols-1 grid-rows-[auto,1fr] content-start gap-x-4 overflow-hidden p-4 md:grid-cols-3 md:grid-rows-[auto,1fr] md:p-8"
 >
 	<div class="col-span-1 mb-4 flex items-center justify-between md:col-span-3">
-		<h2 class="text-xl font-bold">Settings</h2>
+		<h2 class="text-xl font-bold">Cài đặt</h2>
 		<button
 			class="btn rounded-lg"
 			on:click={() => {
@@ -48,7 +48,7 @@
 	<div
 		class="col-span-1 flex flex-col overflow-y-auto whitespace-nowrap max-md:-mx-4 max-md:h-[245px] max-md:border max-md:border-b-2 md:pr-6"
 	>
-		<h3 class="pb-3 pl-3 pt-2 text-[.8rem] text-gray-800 sm:pl-1">Models</h3>
+		<!-- <h3 class="pb-3 pl-3 pt-2 text-[.8rem] text-gray-800 sm:pl-1">Mô hình</h3> -->
 
 		{#each data.models.filter((el) => !el.unlisted) as model}
 			<a
@@ -61,7 +61,7 @@
 					<div
 						class="ml-auto rounded-lg bg-black px-2 py-1.5 text-xs font-semibold leading-none text-white"
 					>
-						Active
+						Đang sử dụng
 					</div>
 				{/if}
 			</a>
@@ -105,7 +105,7 @@
 						<div
 							class="ml-auto rounded-lg bg-black px-2 py-1.5 text-xs font-semibold leading-none text-white"
 						>
-							Active
+							Kích hoạt
 						</div>
 					{/if}
 				</a>
@@ -124,7 +124,7 @@
 				{$page.url.pathname === `${base}/settings` ? '!bg-gray-100 !text-gray-800' : ''}"
 		>
 			<UserIcon class="text-sm" />
-			Application Settings
+			Cài đặt hệ thống
 		</a>
 	</div>
 	<div

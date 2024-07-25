@@ -28,8 +28,8 @@
 <div class="my-auto grid gap-8 lg:grid-cols-3">
 	<div class="lg:col-span-1">
 		<div>
-			<div class="mb-3 flex items-center text-2xl font-semibold">
-				<Logo classNames="mr-1 flex-none" />
+			<div class="mb-3 flex items-center text-xl font-semibold whitespace-nowrap">
+				<Logo classNames="mr-1 flex-none w-10 h-10" />
 				{envPublic.PUBLIC_APP_NAME}
 				<div
 					class="ml-3 flex h-6 items-center rounded-lg border border-gray-100 bg-gray-50 px-2 text-base text-gray-400 dark:border-gray-700/60 dark:bg-gray-800"
@@ -37,10 +37,20 @@
 					v{envPublic.PUBLIC_VERSION}
 				</div>
 			</div>
-			<p class="text-base text-gray-600 dark:text-gray-400">
-				{envPublic.PUBLIC_APP_DESCRIPTION ||
-					"Making the community's best AI chat models available to everyone."}
-			</p>
+			<p class="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap flex items-center">
+				{#if envPublic.PUBLIC_APP_DESCRIPTION}
+    				{envPublic.PUBLIC_APP_DESCRIPTION}
+				{:else}
+					<span>
+					Được phát triển bởi nhóm nghiên cứu URA
+					<img
+						class="ml-1 inline-block aspect-square size-5 rounded border dark:border-gray-700"
+						src={currentModel.logoUrl}
+						alt="Logo"
+					/>
+					</span>
+				{/if}
+			  </p>
 		</div>
 	</div>
 	<div class="lg:col-span-2 lg:pl-24">
@@ -56,7 +66,7 @@
 		<div class="overflow-hidden rounded-xl border dark:border-gray-800">
 			<div class="flex p-3">
 				<div>
-					<div class="text-sm text-gray-600 dark:text-gray-400">Current Model</div>
+					<div class="text-sm text-gray-600 dark:text-gray-400">Mô hình hiện tại</div>
 					<div class="flex items-center gap-1.5 font-semibold max-sm:text-smd">
 						{#if currentModel.logoUrl}
 							<img
@@ -81,7 +91,7 @@
 	</div>
 	{#if currentModelMetadata.promptExamples}
 		<div class="lg:col-span-3 lg:mt-6">
-			<p class="mb-3 text-gray-600 dark:text-gray-300">Examples</p>
+			<p class="mb-3 text-gray-600 dark:text-gray-300">Các ví dụ</p>
 			<div class="grid gap-3 lg:grid-cols-3 lg:gap-5">
 				{#each currentModelMetadata.promptExamples as example}
 					<button

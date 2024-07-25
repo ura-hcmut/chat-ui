@@ -74,7 +74,7 @@
 					type="submit"
 				>
 					<IconGear class="mr-1.5 text-xxs" />
-					Settings
+					Cài đặt
 				</button>
 			</form>
 		</div>
@@ -138,7 +138,7 @@
 				type="submit"
 				class=" w-full rounded-full bg-black px-4 py-3 font-semibold text-white"
 			>
-				Start chatting
+			Bắt đầu ngay
 			</button>
 		</form>
 	</dialog>

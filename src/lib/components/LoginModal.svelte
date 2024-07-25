@@ -57,7 +57,7 @@
 						$settings.ethicsModalAccepted = true;
 					}}
 				>
-					Start chatting
+				Bắt đầu ngay
 				</button>
 			{/if}
 		</form>
